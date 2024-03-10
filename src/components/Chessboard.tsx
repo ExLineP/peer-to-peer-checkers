@@ -158,7 +158,7 @@ const ChessBoard = () => {
 		resetBoard();
 	});
 
-	getJoinData((data, peerId) => {
+	getJoinData((data) => {
 		if (data) {
 			const [board, dateString, turn] = JSON.parse(data.toString());
 			const dateOpponent = new Date(dateString);
