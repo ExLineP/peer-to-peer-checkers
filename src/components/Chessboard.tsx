@@ -201,6 +201,7 @@ const ChessBoard = () => {
 		return () => {
 			window.removeEventListener("beforeunload", handleTabClose);
 		};
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (
