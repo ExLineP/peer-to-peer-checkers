@@ -56,7 +56,7 @@ function createChessBoard(): ChessBoard {
 	);
 }
 
-const ChessBoard = () => {
+const ChessBoard = ({matchId}) => {
 	const [cellSize] = useState(60);
 	const [loading, setLoading] = useState(true);
 	const [board, setBoard] = useState(createChessBoard());
@@ -124,7 +124,7 @@ const ChessBoard = () => {
 	};
 	//////////////////////////////////////////
 	const [date] = useState(new Date());
-	const room = joinRoom({ appId: "chekers" }, "101");
+	const room = joinRoom({ appId: "checkers" }, matchId);
 	room.onPeerJoin((peerId) => {
 		if (players.length === 2) {
 			setSpectators([...spectators, peerId]);
@@ -134,8 +134,8 @@ const ChessBoard = () => {
 		sendJoinData(JSON.stringify([board, date, turn]));
 	});
 	room.onPeerLeave((peerId) => {
-		setPlayers([...players.filter((player) => player != peerId)]);
-		setPlayers([...spectators.filter((player) => player != peerId)]);
+		setPlayers(players.filter((player) => player != peerId));
+		setSpectators(spectators.filter((player) => player != peerId));
 		console.log(peerId + " left");
 	});
 
