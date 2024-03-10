@@ -1,4 +1,5 @@
-﻿import { useEffect, useState } from "react";
+﻿/* eslint-disable @typescript-eslint/no-unused-vars */
+import { useEffect, useState } from "react";
 import { joinRoom } from "trystero/torrent";
 import { Loading } from "./Loading";
 
@@ -193,7 +194,7 @@ const ChessBoard = () => {
 	};
 
 	useEffect(() => {
-		const handleTabClose = (event) => {
+		const handleTabClose = () => {
 			room.leave();
 		};
 		window.addEventListener("beforeunload", handleTabClose);
