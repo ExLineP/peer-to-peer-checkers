@@ -56,7 +56,7 @@ function createChessBoard(): ChessBoard {
 	);
 }
 
-const ChessBoard = ({matchId}) => {
+const ChessBoard = ({matchId}: {matchId: string}) => {
 	const [cellSize] = useState(60);
 	const [loading, setLoading] = useState(true);
 	const [board, setBoard] = useState(createChessBoard());
