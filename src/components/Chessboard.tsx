@@ -268,7 +268,7 @@ const ChessBoard = ({matchId}: {matchId: string}) => {
 			) : (
 				<>
 				<Loading />
-				<span>Ожидание...</span>
+				<span>Ожидание оппонента или загрузка стола...</span>
 				</>
 			)}
 		</div>
