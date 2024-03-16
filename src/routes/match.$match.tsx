@@ -1,11 +1,11 @@
 ﻿import { createFileRoute } from "@tanstack/react-router"
 import ChessBoard from "../components/Chessboard"
 
-export const Route = createFileRoute('/match/$matchId')({
+export const Route = createFileRoute('/match/$match')({
     component: CheckersComponent,
   })
   
   function CheckersComponent() {
-    const { matchId } = Route.useParams()
-    return <ChessBoard matchId={matchId}/>
+    const { match } = Route.useParams()
+    return <ChessBoard matchId={match}/>
   }

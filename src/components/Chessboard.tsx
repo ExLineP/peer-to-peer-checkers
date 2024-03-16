@@ -266,7 +266,10 @@ const ChessBoard = ({matchId}: {matchId: string}) => {
 					</button>
 				</>
 			) : (
+				<>
 				<Loading />
+				<span>Ожидание...</span>
+				</>
 			)}
 		</div>
 	);
